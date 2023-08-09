@@ -36,3 +36,11 @@ Deno.test("encode - invalid input", () => {
     "Not a positive number: -1",
   );
 });
+
+Deno.test("encode - alt alphabet", () => {
+  assertEquals(encode(0, "a"), "");
+  assertEquals(encode(1, "a"), "a");
+  assertEquals(encode(2, "a"), "aa");
+  assertEquals(encode(3, "a"), "aaa");
+  assertEquals(encode(4, "a"), "aaaa");
+});
