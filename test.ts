@@ -18,6 +18,7 @@ Deno.test("encode", () => {
 
 Deno.test("encode - invalid input", () => {
   assertThrows(
+    // deno-lint-ignore no-explicit-any
     () => encode(null as any),
     Error,
     "Not a number: null (object)",
