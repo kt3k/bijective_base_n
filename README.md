@@ -4,6 +4,7 @@ Convert numbers to
 [bijective base-n](https://en.wikipedia.org/wiki/Bijective_numeration) notation.
 
 ```
+0 -> (empty string)
 1 -> a
 2 -> b
 ...
