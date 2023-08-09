@@ -1,5 +1,7 @@
 # bijective_base_n
 
+[![ci](https://github.com/kt3k/bijective_base_n/actions/workflows/ci.yml/badge.svg)](https://github.com/kt3k/bijective_base_n/actions/workflows/ci.yml)
+
 Convert numbers to
 [bijective base-n](https://en.wikipedia.org/wiki/Bijective_numeration) notation.
 
