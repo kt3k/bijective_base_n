@@ -1,4 +1,4 @@
-# bijective_base_n
+# bijective_base_n v0.1.0
 
 [![ci](https://github.com/kt3k/bijective_base_n/actions/workflows/ci.yml/badge.svg)](https://github.com/kt3k/bijective_base_n/actions/workflows/ci.yml)
 
