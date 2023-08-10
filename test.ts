@@ -1,6 +1,6 @@
 // Copyright 2023 Yoshiya Hinosawa. All rights reserved. MIT License.
 
-import { encode } from "./mod.ts";
+import { decode, encode } from "./mod.ts";
 import { assertEquals, assertThrows } from "std/assert/mod.ts";
 
 Deno.test("encode", () => {
@@ -18,8 +18,7 @@ Deno.test("encode", () => {
 
 Deno.test("encode - invalid input", () => {
   assertThrows(
-    // deno-lint-ignore no-explicit-any
-    () => encode(null as any),
+    () => encode(null as unknown as number),
     Error,
     "Not a number: null (object)",
   );
@@ -43,4 +42,32 @@ Deno.test("encode - alt alphabet", () => {
   assertEquals(encode(2, "a"), "aa");
   assertEquals(encode(3, "a"), "aaa");
   assertEquals(encode(4, "a"), "aaaa");
+});
+
+Deno.test("decode", () => {
+  assertEquals(decode(""), 0n);
+  assertEquals(decode("a"), 1n);
+  assertEquals(decode("b"), 2n);
+  assertEquals(decode("y"), 25n);
+  assertEquals(decode("z"), 26n);
+  assertEquals(decode("aa"), 27n);
+  assertEquals(decode("ab"), 28n);
+  assertEquals(decode("zy"), 701n);
+  assertEquals(decode("zz"), 702n);
+  assertEquals(decode("aaa"), 703n);
+  assertEquals(decode("aab"), 704n);
+});
+
+Deno.test("decode - invalid input", () => {
+  assertThrows(() => {
+    decode(null as unknown as string);
+  });
+
+  assertThrows(
+    () => {
+      decode("a0");
+    },
+    Error,
+    "Not a valid string: a0 (alphabet: abcdefghijklmnopqrstuvwxyz)",
+  );
 });
