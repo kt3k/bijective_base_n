@@ -1,6 +1,6 @@
-version: 0.1.0
+version: 0.1.1
 commit: '%.%.%'
 files:
   README.md:
     - bijective_base_n v%.%.%
-    - https://deno.land/x/bijective_base_n@v%.%.%
+    - 'https://deno.land/x/bijective_base_n@v%.%.%'

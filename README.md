@@ -1,4 +1,4 @@
-# bijective_base_n v0.1.0
+# bijective_base_n v0.1.1
 
 [![ci](https://github.com/kt3k/bijective_base_n/actions/workflows/ci.yml/badge.svg)](https://github.com/kt3k/bijective_base_n/actions/workflows/ci.yml)
 
@@ -28,7 +28,7 @@ This system is used, for example, for labeling columns in Excel.
 # Usage
 
 ```js
-import { encode, decode } from "https://deno.land/x/bijective_base_n@v0.1.0/mod.ts";
+import { encode, decode } from "https://deno.land/x/bijective_base_n@v0.1.1/mod.ts";
 
 encode(0) // => ""
 encode(1) // => a
